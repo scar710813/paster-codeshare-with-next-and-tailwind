@@ -22,10 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-purple-600 via-purple-500 to-indigo-950 h-[100vh]`}
       >
         <div>
-          <Link href="/contact">contact</Link>
+          {/* <Link href="/auth">auth</Link> */}
         </div>
         {children}
       </body>
