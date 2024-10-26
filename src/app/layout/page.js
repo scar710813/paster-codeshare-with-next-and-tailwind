@@ -21,15 +21,15 @@ const page = () => {
             <div className='flex flex-col gap-4'>
               <div className="flex gap-4">
                 <p className='w-12'>Option</p>
-                <a className="flex rounded-md hover:opacity-100 hover:bg-white hover:bg-opacity-25 transition-all px-2 cursor-default"><Image width={14} height={14} alt="" src="pen.svg" /> <span className='ml-2'>Edit Code</span> </a>
+                <a className="flex rounded-md hover:opacity-100 hover:bg-white hover:bg-opacity-25 transition-all px-2 cursor-default"><Image width={14} height={14} alt="pen" src="pen.svg" /> <span className='ml-2'>Edit Code</span> </a>
               </div>
               <div className="flex gap-4">
                 <p className='w-12'>Tools</p>
-                <a className="flex opacity-70 rounded-md hover:opacity-100 hover:bg-white hover:bg-opacity-25 transition-all px-2 cursor-default"><Image width={14} height={14} alt="" src="tools.svg" /> <span className='ml-2'>Insert template</span></a>
+                <a className="flex opacity-70 rounded-md hover:opacity-100 hover:bg-white hover:bg-opacity-25 transition-all px-2 cursor-default"><Image width={14} height={14} alt="tools" src="tools.svg" /> <span className='ml-2'>Insert template</span></a>
               </div>
             </div>
             <div>
-              <a>Create paste</a>
+              <a className='rounded-md bg-white text-gray-600 hover:bg-white hover:bg-opacity-25 hover:text-white transition-all p-2 px-4 cursor-default'>Create paste</a>
             </div>
           </div>
         </div>
