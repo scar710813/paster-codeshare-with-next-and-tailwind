@@ -5,10 +5,10 @@ const nextConfig = {
         return [
             {
                 source: "/",
-                destination: "/layout",
+                destination: "/layout/main",
                 permanent: true,
                 locale: false
-            }
+            },
         ]
     }
 };

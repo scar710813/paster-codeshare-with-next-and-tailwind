@@ -25,9 +25,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-[100vh]`}
       >
-        <div>
-          {/* <Link href="/auth">auth</Link> */}
-          
+        <div>          
         </div>
         {children}
       </body>

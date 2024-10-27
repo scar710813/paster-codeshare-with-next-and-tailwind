@@ -19,6 +19,6 @@ body {
   background: var(--background);
   background: linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff) !important;
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: __Space_Grotesk_0aa4ae,__Space_Grotesk_Fallback_0aa4ae !important;
+  font-family: monospace !important;
   color: white;
 }
