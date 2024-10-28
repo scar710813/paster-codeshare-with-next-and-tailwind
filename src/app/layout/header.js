@@ -2,17 +2,17 @@ import React from 'react'
 import Image from "next/image";
 import Link from "next/link";
 
-const header = () => {
+const header = ({ email }) => {
   return (
     <div className='w-full flex justify-between'>
       <div className="flex items-center text-white ">
-        <Link href="/layout/main">
+        <Link href="/layout">
           <Image width={23} height={22.5} alt='standard' src="/standard.svg" className="mx-2" /></Link>
         <svg fill="none" height={20} shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M16.88 3.549L7.12 20.451"></path></svg>
-        <Link href="/auth" className="flex items-center hover:bg-white hover:bg-opacity-20 rounded-md p-1">
+        {email ? <p> {email} </p> : <Link href="/auth" className="flex items-center hover:bg-white hover:bg-opacity-20 rounded-md p-1">
           <Image width={20} height={20} alt="dummy" src="/dummy-profile.jpeg" className="mx-2 rounded-md h-[20px]" /> Sign in
           <Image width={12} height={12} alt='updownarrow' src="/updownarrow.svg" className='ml-1' />
-        </Link>
+        </Link>}
       </div>
       <div className="flex items-center gap-3">
         <Link href="/layout/premium" className="flex items-center text-white border rounded-md px-2 cursor-default">

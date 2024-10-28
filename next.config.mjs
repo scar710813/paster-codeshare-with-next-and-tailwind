@@ -5,7 +5,7 @@ const nextConfig = {
         return [
             {
                 source: "/",
-                destination: "/layout/main",
+                destination: "/layout",
                 permanent: true,
                 locale: false
             },
