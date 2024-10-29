@@ -1,7 +1,16 @@
+'use client'
+
 import Image from "next/image";
 import Header from "../components/header";
+import { useState } from "react";
 
 export default function Home() {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(title, content); 
+  }
   return (
     <div>
       <header className="border-b border-gray-100 flex justify-between px-8 h-[60px] font-sans">
@@ -9,9 +18,9 @@ export default function Home() {
       </header>
       <main className="container  max-w-7xl mx-auto px-16 ">
         <div className="mt-14">
-          <form>
-            <input type="text" className=" border-2 rounded-md outline-0 text-white w-full mb-4 p-4 text-2xl  bg-transparent focus:bg-opacity-45 focus:bg-white transition-all" placeholder="Title" />
-            <textarea placeholder="Add text..." className=" border-2 rounded-md w-full h-[50vh] p-2 text-white border-blue-100 outline-0 p-4 bg-transparent focus:bg-opacity-45 focus:bg-white transition-all "></textarea>
+          <form action={handleSubmit}>
+            <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className=" border-2 rounded-md outline-0 text-white w-full mb-4 p-4 text-2xl  bg-transparent focus:bg-opacity-45 focus:bg-white transition-all" placeholder="Title" />
+            <textarea  value={content} onChange={(e) => setContent(e.target.value)}  placeholder="Add text..." className=" border-2 rounded-md w-full h-[50vh] p-2 text-white border-blue-100 outline-0 p-4 bg-transparent focus:bg-opacity-45 focus:bg-white transition-all "></textarea>
           </form>
         </div>
         <div>
@@ -27,7 +36,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <a className='rounded-md bg-white text-gray-600 hover:bg-white hover:bg-opacity-25 hover:text-white transition-all p-2 px-4 cursor-default'>Create paste</a>
+              <button type="submit" onClick={handleSubmit} className='rounded-md bg-white text-gray-600 hover:bg-white hover:bg-opacity-25 hover:text-white transition-all p-2 px-4 cursor-default'>Create paste</button>
             </div>
           </div>
         </div>

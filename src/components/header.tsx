@@ -35,7 +35,7 @@ const header = () => {
   return (
     <div className='w-full flex justify-between'>
       <div className="flex items-center text-white ">
-        <Link href="/layout">
+        <Link href="/">
           <Image width={23} height={22.5} alt='standard' src="/standard.svg" className="mx-2" /></Link>
         <svg fill="none" height={20} shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M16.88 3.549L7.12 20.451"></path></svg>
         {email ? <p> {email} </p> : <Link href="/auth" className="flex items-center hover:bg-white hover:bg-opacity-20 rounded-md p-1">

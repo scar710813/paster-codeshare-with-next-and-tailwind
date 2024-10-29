@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import PremiumPanel from '@/components/PremiumPanel'
-import PaymentForm1 from './PaymentForm1'
+import PaymentForm1 from './paymentForm1'
 import PaymentForm2 from './PaymentForm2'
 import Modal from '@/components/Modal'
 
