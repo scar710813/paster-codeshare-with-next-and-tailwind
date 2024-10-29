@@ -1,8 +1,37 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
-const header = ({ email }) => {
+const header = () => {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const verifyToken = async (token: string | null) => {
+      if (!token) {
+        console.log("No token found, redirecting to /auth");
+        // router.push('/auth');
+        return;
+      }
+
+      try {
+        const response = await axios.post('/api/protected', { token });
+        if (response.data.valid) {
+          setEmail(response.data.user.email);
+        }
+      } catch (error) {
+        console.error("Verification failed:", error);
+        router.push('/auth');
+      }
+    };
+
+    verifyToken(token);
+  }, [router]);
+
   return (
     <div className='w-full flex justify-between'>
       <div className="flex items-center text-white ">
@@ -15,7 +44,7 @@ const header = ({ email }) => {
         </Link>}
       </div>
       <div className="flex items-center gap-3">
-        <Link href="/layout/premium" className="flex items-center text-white border rounded-md px-2 cursor-default">
+        <Link href="/premium" className="flex items-center text-white border rounded-md px-2 cursor-default">
           <Image width={16} height={16} alt='jewel' src="/jewel.svg" />
           <span className='ml-1'>Get Ads Free</span>
         </Link>
